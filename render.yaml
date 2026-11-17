@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: boda-video-maker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: frankfurt
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: VIDEO_SIZE
+        value: 1080x1920
